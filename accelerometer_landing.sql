@@ -3,7 +3,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS `ab-udacity-project`.`accelerometer_landing`
   `timeStamp` bigint,
   `x` float,
   `y` float,
-  `z` bigint
+  `z` float
 )
 ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
 WITH SERDEPROPERTIES (
