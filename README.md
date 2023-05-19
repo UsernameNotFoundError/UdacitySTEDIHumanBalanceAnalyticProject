@@ -23,7 +23,7 @@ data landing location:
 
 ## 4. transform the landing Accelerometer Table into trusted accelerometer table with AWS Glue Studio:
  After obtaining customer_trusted data, we also need to store Accelerometer Readings from customers who agreed to share their data for research purposes (Trusted Zone) through creating a Glue Table called accelerometer_trusted.
- <p align="center" width="100%"> <img width="100%" src="https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/accelerometer_trusted_glue_studio.PNG"> </p>
+ <p align="center" width="100%"> <img width="80%" src="https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/accelerometer_trusted_glue_studio.PNG"> </p>
 
   * [Python script used to create the trusted customer table](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_landing_to_trusted.py)
   * [Screenshot of the trusted customer table data](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_trusted.PNG)
