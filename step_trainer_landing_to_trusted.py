@@ -4,6 +4,7 @@ from awsglue.utils import getResolvedOptions
 from pyspark.context import SparkContext
 from awsglue.context import GlueContext
 from awsglue.job import Job
+from awsglue.dynamicframe import DynamicFrame
 
 args = getResolvedOptions(sys.argv, ["JOB_NAME"])
 sc = SparkContext()
@@ -36,28 +37,69 @@ Curatedcustomerdata_node1684746478980 = glueContext.create_dynamic_frame.from_op
     transformation_ctx="Curatedcustomerdata_node1684746478980",
 )
 
+# Script generated for node Renamed keys for Join
+RenamedkeysforJoin_node1684748956559 = ApplyMapping.apply(
+    frame=Curatedcustomerdata_node1684746478980,
+    mappings=[
+        ("serialNumber", "string", "`(right) serialNumber`", "string"),
+        ("birthDay", "string", "`(right) birthDay`", "string"),
+        (
+            "shareWithResearchAsOfDate",
+            "long",
+            "`(right) shareWithResearchAsOfDate`",
+            "long",
+        ),
+        ("registrationDate", "long", "`(right) registrationDate`", "long"),
+        ("customerName", "string", "`(right) customerName`", "string"),
+        ("email", "string", "`(right) email`", "string"),
+        ("lastUpdateDate", "long", "`(right) lastUpdateDate`", "long"),
+        ("phone", "string", "`(right) phone`", "string"),
+        (
+            "shareWithPublicAsOfDate",
+            "long",
+            "`(right) shareWithPublicAsOfDate`",
+            "long",
+        ),
+        (
+            "shareWithFriendsAsOfDate",
+            "long",
+            "`(right) shareWithFriendsAsOfDate`",
+            "long",
+        ),
+    ],
+    transformation_ctx="RenamedkeysforJoin_node1684748956559",
+)
+
 # Script generated for node Join
-Join_node1684746473060 = Join.apply(
-    frame1=S3steptrainerlandingzone_node1,
-    frame2=Curatedcustomerdata_node1684746478980,
-    keys1=["serialNumber"],
-    keys2=["serialNumber"],
-    transformation_ctx="Join_node1684746473060",
+S3steptrainerlandingzone_node1DF = S3steptrainerlandingzone_node1.toDF()
+RenamedkeysforJoin_node1684748956559DF = RenamedkeysforJoin_node1684748956559.toDF()
+Join_node1684746473060 = DynamicFrame.fromDF(
+    S3steptrainerlandingzone_node1DF.join(
+        RenamedkeysforJoin_node1684748956559DF,
+        (
+            S3steptrainerlandingzone_node1DF["serialNumber"]
+            == RenamedkeysforJoin_node1684748956559DF["`(right) serialNumber`"]
+        ),
+        "leftsemi",
+    ),
+    glueContext,
+    "Join_node1684746473060",
 )
 
 # Script generated for node Drop Fields
 DropFields_node1684746890790 = DropFields.apply(
     frame=Join_node1684746473060,
     paths=[
-        "birthDay",
-        "shareWithResearchAsOfDate",
-        "registrationDate",
-        "customerName",
-        "email",
-        "lastUpdateDate",
-        "phone",
-        "shareWithPublicAsOfDate",
-        "shareWithFriendsAsOfDate",
+        "`(right) serialNumber`",
+        "`(right) birthDay`",
+        "`(right) shareWithResearchAsOfDate`",
+        "`(right) registrationDate`",
+        "`(right) customerName`",
+        "`(right) email`",
+        "`(right) lastUpdateDate`",
+        "`(right) phone`",
+        "`(right) shareWithPublicAsOfDate`",
+        "`(right) shareWithFriendsAsOfDate`",
     ],
     transformation_ctx="DropFields_node1684746890790",
 )
