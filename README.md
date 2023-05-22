@@ -37,3 +37,11 @@ data landing location:
 
   * [Python script used to create the trusted customer table](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_trusted_to_curated.py)
   * [Screenshot of the trusted customer table data](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_curated.PNG)
+
+## 6. Transform the landing step_trainer Table into trusted step trainer table with AWS Glue Studio:
+ From all the step trainer data from the IoT data stream (Landing Zone), we only store the IoT data stream Records of customers who have agreed to share their data for research purposes and who have accelerometer data (Curated Zone).
+ 
+  <p align="center" width="100%"> <img width="50%" src="https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/step_trainer_trusted_glue_studio.PNG"> </p>
+
+  * [Python script used to create the trusted customer table](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/step_trainer_landing_to_trusted.py)
+  * [Screenshot of the trusted customer table data](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/step_trainer_trusted.PNG)
