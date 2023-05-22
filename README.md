@@ -27,21 +27,29 @@ data landing location:
  After obtaining customer_trusted data, we also need to store Accelerometer Readings from customers who agreed to share their data for research purposes (Trusted Zone) through creating a Glue Table called accelerometer_trusted.
  <p align="center" width="100%"> <img width="60%" src="https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/accelerometer_trusted_glue_studio.PNG"> </p>
 
-  * [Python script used to create the trusted customer table](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/accelerometer_landing_to_trusted.py)
-  * [Screenshot of the trusted customer table data](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/accelerometer_trusted.PNG)
+  * [Python script used to create the trusted accelerometer table](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/accelerometer_landing_to_trusted.py)
+  * [Screenshot of the trusted accelerometer table data](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/accelerometer_trusted.PNG)
 
 ## 5. Cutomer data curation:
  Due to a data quality issue with the Customer Data where the serial number that should be unique was used for the same users. Thus we created a Glue Table for the trusted Customer data that only includes customers who have accelerometer data and have agreed to share their data for research called customers_curated.
  
-  <p align="center" width="100%"> <img width="60%" src="https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_curated_glue_studio.PNG"> </p>
+  <p align="center" width="100%"> <img width="65%" src="https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_curated_glue_studio.PNG"> </p>
 
-  * [Python script used to create the trusted customer table](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_trusted_to_curated.py)
-  * [Screenshot of the trusted customer table data](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_curated.PNG)
+  * [Python script used to create the curated customer table](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_trusted_to_curated.py)
+  * [Screenshot of the curated customer table data](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_curated.PNG)
 
 ## 6. Transform the landing step_trainer Table into trusted step trainer table with AWS Glue Studio:
  From all the step trainer data from the IoT data stream (Landing Zone), we only store the IoT data stream Records of customers who have agreed to share their data for research purposes and who have accelerometer data (Curated Zone).
  
-  <p align="center" width="100%"> <img width="50%" src="https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/step_trainer_trusted_glue_studio.PNG"> </p>
+  <p align="center" width="100%"> <img width="60%" src="https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/step_trainer_trusted_glue_studio.PNG"> </p>
 
-  * [Python script used to create the trusted customer table](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/step_trainer_landing_to_trusted.py)
-  * [Screenshot of the trusted customer table data](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/step_trainer_trusted.PNG)
+  * [Python script used to create the trusted step trainer table](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/step_trainer_landing_to_trusted.py)
+  * [Screenshot of the trusted step trainer table data](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/step_trainer_trusted.PNG)
+
+## 7. Aggregate data for machine learning purposes:
+ From all the step trainer data from the IoT data stream (Landing Zone), we only store the IoT data stream Records of customers who have agreed to share their data for research purposes and who have accelerometer data (Curated Zone).
+ 
+  <p align="center" width="100%"> <img width="65%" src="https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/machine_learning_curated_glue_studio.PNG"> </p>
+
+  * [Python script used to create the curated machine learning table](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/machine_learning_trusted_to_curated.py)
+
