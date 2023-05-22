@@ -16,7 +16,7 @@ data landing location:
   * [SQL script to create accelerometer table](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/accelerometer_landing.sql)
   * [Screenshot of the accelerometer table  data](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/accelerometer_landing.PNG)
 
-## 3. transform the landing customer Table into trusted customer table with AWS Glue Studio:
+## 3. Transform the landing customer Table into trusted customer table with AWS Glue Studio:
  From all the Customer data from the Website (Landing Zone), we only store the Customer Records who agreed to share their data for research purposes (Trusted Zone). Thus, creating a Glue Table called customer_trusted. 
   <p align="center" width="100%"> <img width="40%" src="https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_trusted_glue_studio.PNG"> </p>
 
@@ -30,9 +30,10 @@ data landing location:
   * [Python script used to create the trusted customer table](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/accelerometer_landing_to_trusted.py)
   * [Screenshot of the trusted customer table data](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/accelerometer_trusted.PNG)
 
-## 5. NEW!
- NEW TEXT
-  <p align="center" width="100%"> <img width="6%" src="https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_curated_glue_studio.PNG"> </p>
+## 5. Cutomer data curation:
+ Due to a data quality issue with the Customer Data where the serial number that should be unique was used for the same users. Thus we created a Glue Table for the trusted Customer data that only includes customers who have accelerometer data and have agreed to share their data for research called customers_curated.
+ 
+  <p align="center" width="100%"> <img width="60%" src="https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_curated_glue_studio.PNG"> </p>
 
   * [Python script used to create the trusted customer table](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_trusted_to_curated.py)
   * [Screenshot of the trusted customer table data](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_curated.PNG)
