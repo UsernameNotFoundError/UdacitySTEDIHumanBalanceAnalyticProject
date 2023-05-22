@@ -18,7 +18,7 @@ data landing location:
 
 ## 3. transform the landing customer Table into trusted customer table with AWS Glue Studio:
  From all the Customer data from the Website (Landing Zone), we only store the Customer Records who agreed to share their data for research purposes (Trusted Zone). Thus, creating a Glue Table called customer_trusted. 
-  <p align="center" width="100%"> <img width="60%" src="https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_trusted_glue_studio.PNG"> </p>
+  <p align="center" width="100%"> <img width="40%" src="https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_trusted_glue_studio.PNG"> </p>
 
   * [Python script used to create the trusted customer table](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_landing_to_trusted.py)
   * [Screenshot of the trusted customer table data](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_trusted.PNG)
@@ -29,3 +29,10 @@ data landing location:
 
   * [Python script used to create the trusted customer table](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/accelerometer_landing_to_trusted.py)
   * [Screenshot of the trusted customer table data](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/accelerometer_trusted.PNG)
+
+## 5. NEW!
+ NEW TEXT
+  <p align="center" width="100%"> <img width="6%" src="https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_curated_glue_studio.PNG"> </p>
+
+  * [Python script used to create the trusted customer table](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_trusted_to_curated.py)
+  * [Screenshot of the trusted customer table data](https://github.com/UsernameNotFoundError/UdacitySTEDIHumanBalanceAnalyticProject/blob/master/customer_curated.PNG)
